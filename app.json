@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "ecohero",
+    "name": "Ekoheroj",
     "slug": "ecohero",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -14,7 +14,10 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.leonard97.ecohero"
+      "bundleIdentifier": "com.ecohero",
+      "config": {
+        "googleMapsApiKey": "AIzaSyBW2Uv9KG6uE3LuRiGYs0Czp8Xu3LH9NX0"
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -25,7 +28,13 @@
         "android.permission.CAMERA",
         "android.permission.RECORD_AUDIO"
       ],
-      "package": "com.leonard97.ecohero"
+      "package": "com.ecohero",
+      "googleServicesFile": "./google-services.json",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyBW2Uv9KG6uE3LuRiGYs0Czp8Xu3LH9NX0"
+        }
+      }
     },
     "web": {
       "bundler": "metro",

@@ -11,6 +11,7 @@ import {RootSiblingParent} from 'react-native-root-siblings';
 import {GestureHandlerRootView} from "react-native-gesture-handler";
 import {DrawerContentScrollView} from "@react-navigation/drawer";
 import {TouchableOpacity, Text, StyleSheet} from "react-native";
+import {fetchLocations} from "@/services/locationService";
 
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
@@ -40,6 +41,7 @@ export default function RootLayout() {
         if (loaded) {
             SplashScreen.hideAsync();
         }
+        fetchLocations();
     }, [loaded]);
 
     if (!loaded) {

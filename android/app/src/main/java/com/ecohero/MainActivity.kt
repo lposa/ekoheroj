@@ -1,4 +1,4 @@
-package com.leonard97.ecohero
+package com.ecohero
 import expo.modules.splashscreen.SplashScreenManager
 
 import android.os.Build

@@ -55,7 +55,6 @@ const Map = () => {
     const [filteredCities, setFilteredCities] = useState<FilterType[]>([]);
     const [filteredMarkers, setFilteredMarkers] = useState<string[] | []>([]);
     const [inputText, setInputText] = useState('');
-    const [isLocationGranted, setLocationGranted] = useState(false);
 
     const [filterParam, setFilterParam] = useState('1');
     const mapRef = useRef<MapView>(null);
@@ -84,10 +83,9 @@ const Map = () => {
     useEffect(() => {
         (async () => {
             try {
-                let {status} = await Location.requestBackgroundPermissionsAsync()
-                setLocationGranted(status === 'granted');
+                //let {status} = await Location.requestBackgroundPermissionsAsync();
+                let {status} = await Location.requestForegroundPermissionsAsync();
                 if (Platform.OS === 'ios') {
-
                     if (status !== 'granted') {
                         setNewLocation({
                             latitude: 45.25265,
@@ -133,6 +131,10 @@ const Map = () => {
         })();
     }, []);
 
+    useEffect(()=>{
+        console.log(newLocation)
+    },[newLocation])
+
     useEffect(() => {
         const init = async () => {
             const locations = await getLocations(filterParam);
@@ -145,13 +147,6 @@ const Map = () => {
         init();
     }, [filterParam]);
 
-    if (!isLocationGranted) {
-        return (
-            <View style={styles.screen}>
-                <Text>Niste dozvolili da aplikacija koristi vašu lokaciju.</Text>
-            </View>
-        )
-    }
 
     return (
         <View style={styles.screen}>
