@@ -13,6 +13,7 @@ export default ({ config }) => ({
         splash: {
             backgroundColor: "#00405C",
             image: "./assets/eko_heroj_logo.png",
+            backgroundSize: "contain"
         },
         ios: {
             supportsTablet: true,
