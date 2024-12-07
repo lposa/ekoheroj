@@ -19,7 +19,6 @@ import {usePushNotifications} from "@/notifications/usePushNoticiations";
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-    const [pushNotification, setPushNotification] = useState({});
     const [loaded] = useFonts({
         DongleRegular: require("../assets/fonts/Dongle-Regular.ttf"),
         DongleBold: require("../assets/fonts/Dongle-Bold.ttf"),
@@ -45,6 +44,10 @@ export default function RootLayout() {
         if (loaded) {
             SplashScreen.hideAsync();
         }
+
+        //PUSH NOTIFICATIONS TEST - take the expoPushToken data and use it with expos push notification tool to test
+        /*console.log("expo push token",expoPushToken?.data)
+        console.log(data)*/
         fetchLocations();
     }, [loaded]);
 
