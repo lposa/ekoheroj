@@ -12,11 +12,11 @@ import {
     View,
 } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
-import {ImagePickerAsset, PermissionStatus} from 'expo-image-picker';
+import {ImagePickerAsset} from 'expo-image-picker';
 import * as MailComposer from 'expo-mail-composer';
 import Toast from 'react-native-root-toast';
 import {Camera, CameraView, useCameraPermissions} from "expo-camera";
-import {Asset, CameraOptions} from "react-native-image-picker";
+import {Asset} from "react-native-image-picker";
 
 type ImagePathsType = {
     path: string;
