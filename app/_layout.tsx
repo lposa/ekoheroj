@@ -12,6 +12,7 @@ import {GestureHandlerRootView} from "react-native-gesture-handler";
 import {DrawerContentScrollView} from "@react-navigation/drawer";
 import {TouchableOpacity, Text, StyleSheet} from "react-native";
 import {fetchLocations} from "@/services/locationService";
+import {usePushNotifications} from "@/notifications/usePushNoticiations";
 
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
@@ -23,6 +24,9 @@ export default function RootLayout() {
         DongleRegular: require("../assets/fonts/Dongle-Regular.ttf"),
         DongleBold: require("../assets/fonts/Dongle-Bold.ttf"),
     });
+    const {expoPushToken, notification} = usePushNotifications();
+
+    const data = JSON.stringify(notification, undefined, 2);
 
     useEffect(() => {
         async function prepare() {
