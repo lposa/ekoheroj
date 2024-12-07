@@ -49,7 +49,6 @@ export default ({ config }) => ({
                 "expo-splash-screen",
                 {
                     image: "./assets/eko_heroj_logo.png",
-                    imageWidth: 200,
                     resizeMode: "contain",
                     backgroundColor: "#00405C",
                 },

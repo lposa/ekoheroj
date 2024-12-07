@@ -10,17 +10,20 @@ import {RootSiblingParent} from 'react-native-root-siblings';
 import {GestureHandlerRootView} from "react-native-gesture-handler";
 import {StyleSheet} from "react-native";
 import {fetchLocations} from "@/services/locationService";
+import {usePushNotifications} from "@/notifications/usePushNoticiations";
 
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-    const [pushNotification, setPushNotification] = useState({});
     const [loaded] = useFonts({
         DongleRegular: require("../assets/fonts/Dongle-Regular.ttf"),
         DongleBold: require("../assets/fonts/Dongle-Bold.ttf"),
     });
+    const {expoPushToken, notification} = usePushNotifications();
+
+    const data = JSON.stringify(notification, undefined, 2);
 
     useEffect(() => {
         async function prepare() {
@@ -39,6 +42,10 @@ export default function RootLayout() {
         if (loaded) {
             SplashScreen.hideAsync();
         }
+
+        //PUSH NOTIFICATIONS TEST - take the expoPushToken data and use it with expos push notification tool to test
+        /*console.log("expo push token",expoPushToken?.data)
+        console.log(data)*/
         fetchLocations();
     }, [loaded]);
 
