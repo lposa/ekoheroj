@@ -1,8 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react';
 import * as Location from 'expo-location';
 import MapView, {PROVIDER_GOOGLE, Marker, Region} from 'react-native-maps';
-
-
 import {
     StyleSheet,
     TouchableOpacity,
@@ -15,7 +13,6 @@ import {
     TextInput,
 } from 'react-native';
 
-``
 import {cities} from '@/cities';
 import Autocomplete from 'react-native-autocomplete-input';
 
@@ -148,6 +145,7 @@ const Map = () => {
     }, [filterParam]);
 
 
+
     return (
         <View style={styles.screen}>
             <View style={styles.titleContainer}>
@@ -176,6 +174,7 @@ const Map = () => {
                     flatListProps={{
                         keyboardShouldPersistTaps: 'always',
                         keyExtractor: item => (item as FilterType)?.city,
+                        // @ts-ignore
                         renderItem: ({item: {city, lng, lat, label}}: { item: FilterType }) => (
                             <TouchableOpacity
                                 onPress={() => {
@@ -224,7 +223,7 @@ const Map = () => {
                                                 longitude: +marker[2],
                                             }}
                                             title="Lokacija"
-                                            description={getMarkerDescription(marker)}
+                                            description={getMarkerDescription([marker])}
                                             pinColor={getMarkerColor(+marker[0])}
                                             opacity={0.8}
                                             rotation={10}
@@ -245,8 +244,8 @@ const styles = StyleSheet.create({
         marginHorizontal: 20,
     },
     imageStyle: {
-        width: 32,
-        height: 32,
+        width: 24,
+        height: 24,
         resizeMode: 'contain',
     },
     inputTextStyle: {

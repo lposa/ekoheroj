@@ -6,7 +6,7 @@ export default ({ config }) => ({
         slug: "ecohero",
         version: "1.0.0",
         orientation: "portrait",
-        icon: "./assets/eko_heroj_logo.png",
+        icon: "./assets/eko-heroj-icon.png",
         scheme: "myapp",
         userInterfaceStyle: "automatic",
         newArchEnabled: true,
@@ -23,7 +23,7 @@ export default ({ config }) => ({
         },
         android: {
             adaptiveIcon: {
-                foregroundImage: "./assets/eko_heroj_logo.png",
+                foregroundImage: "./assets/eko-heroj-icon.png",
                 backgroundColor: "#00405C",
             },
             permissions: [
@@ -41,7 +41,7 @@ export default ({ config }) => ({
         web: {
             bundler: "metro",
             output: "static",
-            favicon: "./assets/images/favicon.png",
+            favicon: "./assets/eko-heroj-icon",
         },
         plugins: [
             "expo-router",
