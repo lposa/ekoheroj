@@ -1,6 +1,5 @@
 import {useFonts} from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
-import {StatusBar} from 'expo-status-bar';
 import {useEffect, useState} from 'react';
 import 'react-native-reanimated';
 import {Drawer} from "expo-router/drawer";
@@ -9,8 +8,7 @@ import LogoTitle from "@/components/LogoTitle";
 import {RootSiblingParent} from 'react-native-root-siblings';
 
 import {GestureHandlerRootView} from "react-native-gesture-handler";
-import {DrawerContentScrollView} from "@react-navigation/drawer";
-import {TouchableOpacity, Text, StyleSheet} from "react-native";
+import {StyleSheet} from "react-native";
 import {fetchLocations} from "@/services/locationService";
 import {usePushNotifications} from "@/notifications/usePushNoticiations";
 
@@ -154,7 +152,6 @@ export default function RootLayout() {
                         options={{
                             headerTitle: () => <LogoTitle/>,
                             drawerLabel: "Uslovi korišćenja",
-                            drawerPosition: 'right',
                         }}
                     />
                     <Drawer.Screen

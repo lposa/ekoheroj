@@ -32,7 +32,6 @@ const EmailForm = () => {
     const [description, setDescription] = useState('');
     const [isAvailable, setIsAvailable] = useState(false);
     const [showCamera, setShowCamera] = useState(false);
-    const [status, requestPermission] = useCameraPermissions();
     const [hasCameraPermission, setHasCameraPermission] = useState<boolean>();
 
     let cameraRef = useRef<CameraView>(null);
@@ -47,11 +46,21 @@ const EmailForm = () => {
     }
 
     useEffect(() => {
-        (async () => {
-            const cameraPermission = await Camera.requestCameraPermissionsAsync();
-            setHasCameraPermission(cameraPermission.status === "granted")
-        })();
-    }, [])
+        const checkPermission = async () => {
+            const {status} = await Camera.getCameraPermissionsAsync();
+
+            if (status === 'granted') {
+                setHasCameraPermission(true);
+            } else if (status === 'undetermined') {
+                const permissionResponse = await Camera.requestCameraPermissionsAsync();
+                setHasCameraPermission(permissionResponse.status === 'granted');
+            } else {
+                setHasCameraPermission(false);
+            }
+        };
+
+        checkPermission();
+    }, []);
 
     useEffect(() => {
         async function checkAvailability() {
@@ -114,9 +123,6 @@ const EmailForm = () => {
     };
 
 
-    //cepomdoosmehaekoheroj@gmail.com'
-
-
     const showToasts = (message: string) => {
         if (Platform.OS === "ios") {
             Toast.show(message, {duration: Toast.durations.LONG})
@@ -139,7 +145,7 @@ const EmailForm = () => {
                 ccRecipients: [''],
                 bccRecipients: [''],
                 isHtml: true,
-                recipients: ["posa.97@gmail.com"],
+                recipients: ["cepomdoosmehaekoheroj@gmail.com"],
                 attachments: [...paths || []],
             }).then(() => {
                 showToasts("Email poslat!")
@@ -347,7 +353,7 @@ const styles = StyleSheet.create({
     },
     title: {
         fontFamily: 'DongleBold',
-        fontSize: 36,
+        fontSize: 24,
         color: '#FF6600',
         fontWeight: '700',
         marginLeft: 10,

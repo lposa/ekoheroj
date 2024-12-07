@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
   },
   heading: {
     fontFamily: 'DongleBold',
-    fontSize: 36,
+    fontSize: 24,
     color: '#83C683',
     textAlign: 'left',
     width: '100%',
