@@ -5,6 +5,7 @@ import 'react-native-reanimated';
 import {Drawer} from "expo-router/drawer";
 import React from 'react';
 import {RootSiblingParent} from 'react-native-root-siblings';
+import LogoTitle from "@/components/LogoTitle";
 
 import {GestureHandlerRootView, Pressable} from "react-native-gesture-handler";
 import {StyleSheet, Text} from "react-native";
@@ -118,37 +119,43 @@ export default function RootLayout() {
                         <Drawer.Screen
                             name="index"
                             options={{
-                                headerTitle: "Početna",
+                                headerTitle: () => <LogoTitle/>,
+                                drawerLabel: "Početna",
                             }}
                         />
                         <Drawer.Screen
                             name="MoreAboutActions"
                             options={{
-                                headerTitle: "Novosti",
+                                headerTitle: () => <LogoTitle/>,
+                                drawerLabel: "Novosti",
                             }}
                         />
                         <Drawer.Screen
                             name="EmailForm"
                             options={{
-                                headerTitle: "Prijavi problem",
+                                headerTitle: () => <LogoTitle/>,
+                                drawerLabel: "Prijavi problem",
                             }}
                         />
                         <Drawer.Screen
                             name="Map"
                             options={{
-                                headerTitle: "Mapa",
+                                headerTitle: () => <LogoTitle/>,
+                                drawerLabel: "Mapa",
                             }}
                         />
                         <Drawer.Screen
                             name="TermsConditions"
                             options={{
-                                headerTitle: "Uslovi korišćenja",
+                                headerTitle: () => <LogoTitle/>,
+                                drawerLabel: "Uslovi korišćenja",
                             }}
                         />
                         <Drawer.Screen
                             name="AboutUs"
                             options={{
-                                headerTitle: "O nama",
+                                headerTitle: () => <LogoTitle/>,
+                                drawerLabel: "O nama",
                             }}
                         />
                 </Drawer>
