@@ -53,7 +53,6 @@ export default function RootLayout() {
         return null;
     }
 
-    //TODO: Style this and maybe move it out as a seperate component?
     const CustomDrawerContent = (props: DrawerContentComponentProps) => {
         return (
             <DrawerContentScrollView {...props} contentContainerStyle={styles.drawerContainer}>
@@ -116,7 +115,42 @@ export default function RootLayout() {
                         drawerActiveTintColor: 'white',
                         drawerInactiveTintColor: 'white',
                     }}>
-
+                        <Drawer.Screen
+                            name="index"
+                            options={{
+                                headerTitle: "Početna",
+                            }}
+                        />
+                        <Drawer.Screen
+                            name="MoreAboutActions"
+                            options={{
+                                headerTitle: "Novosti",
+                            }}
+                        />
+                        <Drawer.Screen
+                            name="EmailForm"
+                            options={{
+                                headerTitle: "Prijavi problem",
+                            }}
+                        />
+                        <Drawer.Screen
+                            name="Map"
+                            options={{
+                                headerTitle: "Mapa",
+                            }}
+                        />
+                        <Drawer.Screen
+                            name="TermsConditions"
+                            options={{
+                                headerTitle: "Uslovi korišćenja",
+                            }}
+                        />
+                        <Drawer.Screen
+                            name="AboutUs"
+                            options={{
+                                headerTitle: "O nama",
+                            }}
+                        />
                 </Drawer>
             </GestureHandlerRootView>
         </RootSiblingParent>
@@ -137,7 +171,7 @@ const styles = StyleSheet.create({
     },
     drawerButtonText: {
         color: 'white',
-        fontSize: 18,
+        fontSize: 24,
         fontFamily: 'DongleRegular',
     },
 });
