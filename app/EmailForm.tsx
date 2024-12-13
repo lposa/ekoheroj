@@ -259,6 +259,7 @@ const styles = StyleSheet.create({
     input: {
         borderColor: 'transparent',
         marginBottom: 20,
+        paddingVertical: 10,
         paddingHorizontal: 15,
         marginHorizontal: 10,
         fontSize: 24,
@@ -274,6 +275,9 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.6,
         shadowRadius: 4.65,
         elevation: 2,
+        height: 50,
+        textAlignVertical: 'center',
+
     },
     multilineInput: {
         textAlignVertical: 'top',

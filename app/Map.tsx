@@ -222,7 +222,7 @@ const Map = () => {
                                                 latitude: +marker[1],
                                                 longitude: +marker[2],
                                             }}
-                                            title="Lokacija"
+                                            title={marker[3]}
                                             description={getMarkerDescription([marker])}
                                             pinColor={getMarkerColor(+marker[0])}
                                             opacity={0.8}
@@ -254,6 +254,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         backgroundColor: '#fff',
         paddingHorizontal: 10,
+        paddingVertical: 10,
     },
     mapViewContainer: {
         borderWidth: 1,
