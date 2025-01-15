@@ -3,7 +3,7 @@ require('dotenv').config();
 export default ({ config }) => ({
     expo: {
         name: "Ekoheroj",
-        slug: "ecohero",
+        slug: "ekoheroj",
         version: "1.0.0",
         orientation: "portrait",
         icon: "./assets/eko-heroj-icon.png",
@@ -17,7 +17,7 @@ export default ({ config }) => ({
         },
         ios: {
             supportsTablet: true,
-            bundleIdentifier: "com.ecohero",
+            bundleIdentifier: "com.ekoheroj.app",
             config: {
                 googleMapsApiKey: process.env.EXPO_GOOGLE_API_KEY, // API Key from environment variables
             },
@@ -31,7 +31,7 @@ export default ({ config }) => ({
                 "android.permission.CAMERA",
                 "android.permission.RECORD_AUDIO",
             ],
-            package: "com.ecohero",
+            package: "com.ekoheroj.app",
             googleServicesFile: "./google-services.json",
             config: {
                 googleMaps: {

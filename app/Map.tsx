@@ -255,6 +255,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         paddingHorizontal: 10,
         paddingVertical: 10,
+        height: 45,
+        fontSize: 15
     },
     mapViewContainer: {
         borderWidth: 1,
@@ -285,7 +287,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     itemText: {
-        fontSize: 15,
+        fontSize: 20,
         paddingTop: 5,
         paddingBottom: 5,
         paddingHorizontal: 6,
@@ -296,7 +298,6 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 16,
     },
-
     input: {
         width: '100%',
         marginBottom: 0,

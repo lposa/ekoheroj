@@ -235,7 +235,7 @@ const EmailForm = () => {
                             </Text>
                             <TouchableOpacity onPress={() => removeImage(index)}>
                                 <Image
-                                    style={{width: 30, height: 30}}
+                                    style={{width: 35, height: 35}}
                                     source={require('../assets/minus.png')}
                                 />
                             </TouchableOpacity>
@@ -362,7 +362,6 @@ const styles = StyleSheet.create({
         fontWeight: '700',
         marginLeft: 10,
     },
-
     camera: {
         flex: 1,
         position: 'relative',
@@ -395,7 +394,8 @@ const styles = StyleSheet.create({
         padding: 10,
         borderRadius: 5,
         textTransform: 'uppercase',
-        fontFamily: "DongleBold"
+        fontFamily: "DongleBold",
+        height: 20
     }
 });
 

@@ -28,7 +28,7 @@
         <key>CFBundleURLSchemes</key>
         <array>
           <string>myapp</string>
-          <string>com.ecohero</string>
+          <string>com.ekoheroj.app</string>
         </array>
       </dict>
     </array>

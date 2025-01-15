@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
     zIndex: -100,
   },
   filterItem: {
-    width: '25%',
+    width: '30%',
     margin: 4,
     borderRadius: 10,
     borderColor: '#FF6600',
@@ -105,6 +105,7 @@ const styles = StyleSheet.create({
     paddingVertical: 2,
     color: '#00405C',
     backgroundColor: '#fff',
+    height: 35
   },
 });
 

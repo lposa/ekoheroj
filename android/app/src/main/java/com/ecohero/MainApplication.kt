@@ -1,4 +1,4 @@
-package com.ecohero
+package com.ekoheroj.app
 
 import android.app.Application
 import android.content.res.Configuration
