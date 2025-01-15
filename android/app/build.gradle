@@ -4,6 +4,16 @@ apply plugin: "com.facebook.react"
 
 def projectRoot = rootDir.getAbsoluteFile().getParentFile().getAbsolutePath()
 
+def keystorePropertiesFile = file("keystore.properties")
+def keystoreProperties = new Properties()
+
+if (keystorePropertiesFile.exists()) {
+    println "Keystore file found at: ${keystorePropertiesFile.absolutePath}"
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+} else {
+    throw new GradleException("Keystore properties file not found at ${keystorePropertiesFile.absolutePath}")
+}
+
 /**
  * This is the configuration block to customize your React Native Android app.
  * By default you don't need to apply any configuration, just uncomment the lines you need.
@@ -102,10 +112,10 @@ android {
             keyPassword 'android'
         }
         release {
-            storeFile file(System.getenv("MYAPP_UPLOAD_STORE_FILE"))
-            storePassword System.getenv("MYAPP_UPLOAD_STORE_PASSWORD")
-            keyAlias System.getenv("MYAPP_UPLOAD_KEY_ALIAS")
-            keyPassword System.getenv("MYAPP_UPLOAD_KEY_PASSWORD")
+            storeFile file(keystoreProperties["MYAPP_UPLOAD_STORE_FILE"])
+            storePassword keystoreProperties["MYAPP_UPLOAD_STORE_PASSWORD"]
+            keyAlias keystoreProperties["MYAPP_UPLOAD_KEY_ALIAS"]
+            keyPassword keystoreProperties["MYAPP_UPLOAD_KEY_PASSWORD"]
         }
     }
     buildTypes {
