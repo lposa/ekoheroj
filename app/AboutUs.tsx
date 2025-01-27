@@ -1,7 +1,18 @@
 import React from 'react';
-import { View, ScrollView, Text, StyleSheet } from 'react-native';
+import {
+  View,
+  ScrollView,
+  Text,
+  StyleSheet,
+  Linking,
+  TouchableOpacity,
+} from 'react-native';
 
 const AboutUs = () => {
+  const handleLinkPress = () => {
+    Linking.openURL('https://cepomdoosmeha.org.rs/');
+  };
+
   return (
     <ScrollView style={styles.screen}>
       <View style={styles.textContainer}>
@@ -24,6 +35,12 @@ const AboutUs = () => {
           narušava našu prirodnu sredinu i okolinu. Jednostavno, jednim klikom,
           ova aplikacija vam omogućava da postanete Ekoheroj, jer Ekoheroju je
           uvek na pameti briga o našoj planeti.
+        </Text>
+        <Text style={styles.text}>
+          Poseti nas na sajtu{' '}
+          <Text style={styles.link} onPress={handleLinkPress}>
+            https://cepomdoosmeha.org.rs/
+          </Text>
         </Text>
       </View>
     </ScrollView>
@@ -54,6 +71,13 @@ const styles = StyleSheet.create({
     lineHeight: 24,
     marginBottom: 20,
     paddingTop: 10,
+  },
+  link: {
+    fontFamily: 'DongleRegular',
+    color: '#1E90FF',
+    fontSize: 28,
+    marginTop: 10,
+    textDecorationLine: 'underline',
   },
 });
 
