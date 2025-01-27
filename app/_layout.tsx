@@ -80,6 +80,13 @@ export default function RootLayout() {
 
                 <Pressable
                     style={styles.drawerButton}
+                    onPress={() => props.navigation.navigate('ContactUs')}
+                >
+                    <Text style={styles.drawerButtonText}>Kontakt</Text>
+                </Pressable>
+
+                <Pressable
+                    style={styles.drawerButton}
                     onPress={() => props.navigation.navigate('Map')}
                 >
                     <Text style={styles.drawerButtonText}>Mapa</Text>
@@ -135,6 +142,13 @@ export default function RootLayout() {
                             options={{
                                 headerTitle: () => <LogoTitle/>,
                                 drawerLabel: "Prijavi problem",
+                            }}
+                        />
+                        <Drawer.Screen
+                            name="ContactUs"
+                            options={{
+                                headerTitle: () => <LogoTitle/>,
+                                drawerLabel: "Kontakt",
                             }}
                         />
                         <Drawer.Screen
