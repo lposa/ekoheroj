@@ -53,7 +53,7 @@ const ContactUs = () => {
             }).then(() => {
                 showToasts("Email poslat!")
                 resetForm();
-            }).catch(() => showToasts('Greška! Pokušajte ponovo.'))
+            })
         }
     }
 
