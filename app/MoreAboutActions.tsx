@@ -70,9 +70,10 @@ const styles = StyleSheet.create({
         marginTop: 20,
         marginBottom: 20,
         paddingTop: 10,
+        paddingHorizontal: 20,
     },
     htmlContainer: {
-        width: '80%',
+        width: '100%',
         alignSelf: 'center',
     },
 });

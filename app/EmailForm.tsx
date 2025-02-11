@@ -171,9 +171,12 @@ const EmailForm = () => {
         <SafeAreaView>
             <Modal visible={showCamera}>
                 <CameraView ref={cameraRef} style={styles.camera}>
-                    <TouchableOpacity style={styles.closeBtn} onPress={() => setShowCamera(false)}><Text>Zatvori</Text></TouchableOpacity>
-                    <TouchableOpacity onPress={takeAndSaveImage} style={styles.cameraTakePic}><Text
-                        style={styles.cameraText}>Slikaj</Text></TouchableOpacity>
+                    <TouchableOpacity style={styles.closeBtn} onPress={() => setShowCamera(false)}>
+                        <Text>Zatvori</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={takeAndSaveImage} style={styles.cameraTakePic}>
+                        <Text style={styles.cameraText}>Slikaj</Text>
+                    </TouchableOpacity>
                 </CameraView>
             </Modal>
             <ScrollView contentContainerStyle={styles.scrollView}>
@@ -391,12 +394,14 @@ const styles = StyleSheet.create({
         top: 20,
         right: 30,
         backgroundColor: 'white',
-        padding: 10,
+        paddingVertical: 10,
+        paddingHorizontal: 15,
         borderRadius: 5,
-        textTransform: 'uppercase',
-        fontFamily: "DongleBold",
-        height: 20
+        justifyContent: 'center',
+        alignItems: 'center',
+        fontFamily: "DongleBold"
     }
+
 });
 
 export default EmailForm;

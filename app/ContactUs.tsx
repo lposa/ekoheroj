@@ -19,7 +19,6 @@ const ContactUs = () => {
     const [isAvailable, setIsAvailable] = useState(false);
 
     const resetForm = () => {
-        setEmail('');
         setMessage('');
     }
 
