@@ -101,8 +101,8 @@ android {
         applicationId 'com.ekoheroj.app'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 8
-        versionName "1.0.8" // TODO: update versions here
+        versionCode 9
+        versionName "1.0.9" // TODO: update versions here
     }
     signingConfigs {
         debug {
